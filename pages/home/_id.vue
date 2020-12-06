@@ -15,6 +15,11 @@
 <script>
 import homes from "~/data/homes";
 export default {
+    // layout: 'red',
+    // or alsu you can use
+    layout (context) {
+        return 'red'
+    },
     head() {
         return{
             title: this.home.title
