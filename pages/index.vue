@@ -3,7 +3,7 @@
     <div v-for="home in homes" :key="home.objectID" style="float:left;margin:10px">
       <!-- <a :href="`/home/${home.objectID}`"><home-card :home="home"/></a> -->
       <!-- <router-link :to="`/home/${home.objectID}`"><home-card :home="home"/></router-link> -->
-      <nuxt-link :to="`/home/${home.objectID}`" no-prefetch><home-card :home="home"/></nuxt-link>
+      <nuxt-link :to="`/home/${home.objectID}`" prefetch><home-card :home="home"/></nuxt-link>
     </div>
   </div>
 </template>
