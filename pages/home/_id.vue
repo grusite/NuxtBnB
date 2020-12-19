@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import homes from "~/data/homes";
 export default {
     // layout: 'red',
     // or alsu you can use
@@ -25,19 +24,14 @@ export default {
             title: this.home.title,
         }
     },
-    data(){
-        return{
-            homes: {}
-        }
-    },
-    methods: {
-    },
     mounted(){
         this.$map.showMap(this.$refs.map, this.home._geoloc.lat, this.home._geoloc.lng)
     },
-    created(){
-        const home = homes.find((home)=>home.objectID == this.$route.params.id)
-        this.home = home
+    async asyncData({ params, $dataApi}){
+        const home = await $dataApi.getHome(params.id)
+        return{
+            home
+        }
     }
 }
 </script>
