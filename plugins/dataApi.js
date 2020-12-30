@@ -30,6 +30,8 @@ export default function(context, inject) {
           method: 'POST',
           body: JSON.stringify({
             filters: `homeId:${homeId}`,
+            hitsPerPage: 6,
+            attributesToHighlight: [],
           }),
         })
       )
